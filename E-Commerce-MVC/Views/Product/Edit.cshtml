@@ -1,0 +1,42 @@
+@model E_Commerce_Payment_API.Models.Product
+
+@{
+     ViewData["Title"]="Edit Product";
+}
+
+<div id="editproductform">
+<h3>Edit product information</h3>
+<br>
+<div  class="row">
+     <div class="col-md-16 row">
+          <form asp-action="Edit">
+               <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control"/>
+               </div>
+               <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control"/>
+               </div>
+               <div class="form-group">
+                    <label asp-for="Price" class="control-label"></label>
+                    <input asp-for="Price" class="form-control"/>
+               </div>
+               <div class="form-group">
+                    <label asp-for="StockQuantity" class="control-label"></label>
+                    <input asp-for="StockQuantity" class="form-control"/>
+               </div>
+               <div class="form-group">
+                    <label asp-for="Weight" class="control-label"></label>
+                    <input asp-for="Weight" class="form-control"/>
+               </div>
+               <div class="form-group">
+                    <input type="submit" value="Edit" class="btn btn-primary" id="btnEdit" onclick="return confirm('Product successfully edited!');"/>
+               </div>
+          </form>
+     </div>
+</div>
+</div>
+
+
+<a class="nav-link text-light col" asp-area="" asp-controller="Product" asp-action="Edit"><button class="btn btn-secondary">Back</button></a>

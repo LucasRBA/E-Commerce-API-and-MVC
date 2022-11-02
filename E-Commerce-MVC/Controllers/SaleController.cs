@@ -20,12 +20,20 @@ namespace E_Commerce_Payment_API.Controllers
             _context = context;
         }
 
+        public IActionResult EmptyCart() {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Cart(int id) {
           var product = _context.Products.Find(id);
           var productsInCart = new List<Product>() {};
-          productsInCart.Add(product);
-          return View(productsInCart);
+          if(product != null) {
+            productsInCart.Add(product);
+            return View(productsInCart);
+          } else {
+            return RedirectToAction(nameof(EmptyCart));
+          }
         }
 
     }

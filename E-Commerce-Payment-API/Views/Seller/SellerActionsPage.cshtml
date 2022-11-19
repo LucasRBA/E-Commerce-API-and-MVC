@@ -1,0 +1,57 @@
+@model E_Commerce_Payment_API.Models.Seller
+
+@{
+    ViewData["Title"] = "Seller's action page";
+}
+
+<div class="text-center">
+    <p style="font-size:250%;" class="display-4"> In this page you will be able to Edit your personal informartion, delete it, and add more products to your account</p>
+</div>
+
+<br>
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.PhoneNumberFormatter(Convert.ToInt64(model.PhoneNumber)))
+            </th>
+        </tr>
+    </thead>
+</table>
+
+<br>
+<br>
+<div class="container">
+    <div class="row center">
+        <div class="col order-first">
+            <a asp-controller="Seller" asp-action="Edit"><button class="btn btn-primary">Edit</button></a>
+        </div>
+        <div class="col">
+            <a asp-controller="Seller" asp-action="Delete"><button class="btn btn-danger">Delete my seller account</button></a>
+        </div>
+        <div class="col">
+            <a asp-controller="Seller" asp-action="RegisterProduct"><button class="btn btn-primary">Register Product</button></a>
+        </div>
+         <div class="col">
+            <a asp-controller="Seller" asp-action="DeleteProduct"><button class="btn btn-danger">Delete a product</button></a>
+        </div>
+         <div class="col-last">
+            <a asp-controller="Seller" asp-action="Register"><button class="btn btn-success">I want to register as a seller</button></a>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<a class="nav-link text-light col" asp-area="" asp-controller="Seller" asp-action="Index"><button class="btn btn-secondary">Back</button></a>

@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "E-Commerce";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Welcome to our E-Commerce</h2>
+</div>
+
+<br>
+<br>
+
+<div class="container">
+    <div class="row center">
+        <div class="col order-first">
+            <a asp-controller="Seller" asp-action="Index"><button class="btn btn-primary">Seller</button></a>
+        </div>
+        <div class="col">
+            <a asp-controller="Product" asp-action="Index"><button class="btn btn-primary">Search Produtcs</button></a>
+        </div>
+        <div class="col order-last">
+            <a asp-controller="Shipping" asp-action="Index"><button class="btn btn-primary">Track your order</button></a>
+        </div>
+    </div>
+</div>
+
+
